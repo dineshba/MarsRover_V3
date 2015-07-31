@@ -18,8 +18,6 @@ public class Rover {
     }
 
     public void executeCommands() {
-        for(int i =0; i < commands.length(); i++) {
-            char command = commands.charAt(i);
-        }
+
     }
 }
