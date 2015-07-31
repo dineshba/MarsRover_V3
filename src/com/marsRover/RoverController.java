@@ -2,15 +2,10 @@ package com.marsRover;
 
 public class RoverController {
 
-    private final String position;
+    private String position;
     private char orientation;
     private int yCoOrdinate;
     private int xCoOrdinate;
-
-    public RoverController(String position) {
-        this.position = position;
-        getLocationAndOrientation(position);
-    }
 
     private void getLocationAndOrientation(String position) {
         xCoOrdinate = Integer.parseInt("" + position.charAt(0));
@@ -18,7 +13,8 @@ public class RoverController {
         orientation = position.charAt(4);
     }
 
-    public String doThis(String commands) {
+    public String doThis(String commands, String position) {
+        getLocationAndOrientation(position);
         for(int i =0; i < commands.length(); i++) {
             char command = commands.charAt(i);
             if(command == 'M')

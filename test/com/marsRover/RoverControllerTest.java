@@ -9,36 +9,36 @@ public class RoverControllerTest {
 
     @Test
     public void doNothingForNoCommands() {
-        RoverController controller = new RoverController("1 2 N");
+        RoverController controller = new RoverController();
 
-        assertEquals("1 2 N", controller.doThis(" "));
+        assertEquals("1 2 N", controller.doThis(" ", "1 2 N"));
     }
 
     @Test
     public void MoveOnlyCommandsWhenOrientationInNorth() {
-        RoverController controller = new RoverController("1 2 N");
+        RoverController controller = new RoverController();
 
-        assertEquals("1 4 N", controller.doThis("MM"));
+        assertEquals("1 4 N", controller.doThis("MM", "1 2 N"));
     }
 
     @Test
     public void MoveOnlyForAllInitialOrientation() {
-        RoverController controller = new RoverController("1 2 S");
+        RoverController controller = new RoverController();
 
-        assertEquals("1 0 S", controller.doThis("MM"));
+        assertEquals("1 0 S", controller.doThis("MM", "1 2 S"));
     }
 
     @Test
     public void ChangeInOrientationInLeftDirectionOnly() {
-        RoverController controller = new RoverController("1 2 S");
+        RoverController controller = new RoverController();
 
-        assertEquals("1 2 N", controller.doThis("LL"));
+        assertEquals("1 2 N", controller.doThis("LL", "1 2 S"));
     }
 
     @Test
     public void ChangeInOrientationInRightDirectionAlso() {
-        RoverController controller = new RoverController("1 2 S");
+        RoverController controller = new RoverController();
 
-        assertEquals("1 2 W", controller.doThis("R"));
+        assertEquals("1 2 W", controller.doThis("R", "1 2 S"));
     }
 }

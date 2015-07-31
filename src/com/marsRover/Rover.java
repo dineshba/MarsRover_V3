@@ -1,7 +1,7 @@
 package com.marsRover;
 
 public class Rover {
-    private final String position;
+    private String position;
     private String commands;
 
     Rover(String position) {
@@ -17,7 +17,7 @@ public class Rover {
         commands = view.getInput();
     }
 
-    public void executeCommands() {
-
+    public void executeCommands(RoverController roverController) {
+        position = roverController.doThis(commands, position);
     }
 }
