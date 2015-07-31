@@ -34,4 +34,11 @@ public class RoverControllerTest {
 
         assertEquals("1 2 N", controller.doThis("LL"));
     }
+
+    @Test
+    public void ChangeInOrientationInRightDirectionAlso() {
+        RoverController controller = new RoverController("1 2 S");
+
+        assertEquals("1 2 W", controller.doThis("R"));
+    }
 }

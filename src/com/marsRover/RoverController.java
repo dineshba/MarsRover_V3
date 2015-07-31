@@ -1,7 +1,5 @@
 package com.marsRover;
 
-import apple.laf.JRSUIConstants;
-
 public class RoverController {
 
     private final String position;
@@ -25,18 +23,23 @@ public class RoverController {
             char command = commands.charAt(i);
             if(command == 'M')
                 move();
-            else if(command == 'L')
-                rotateLeft();
+            else if(command == 'L' || command == 'R')
+                rotate(command);
         }
         return currentPosition();
     }
 
-    private void rotateLeft() {
+    private void rotate(char command) {
         String referenceList = "NESW";
         int referenceNumber = referenceList.indexOf(orientation);
-        referenceNumber--;
-        if(referenceNumber < 0)
+        if (command == 'L')
+            referenceNumber--;
+        else
+            referenceNumber++;
+        if (referenceNumber < 0)
             referenceNumber += 4;
+        if (referenceNumber > 4)
+            referenceNumber -= 4;
         orientation = referenceList.charAt(referenceNumber);
     }
 
