@@ -25,8 +25,19 @@ public class RoverController {
             char command = commands.charAt(i);
             if(command == 'M')
                 move();
+            else if(command == 'L')
+                rotateLeft();
         }
         return currentPosition();
+    }
+
+    private void rotateLeft() {
+        String referenceList = "NESW";
+        int referenceNumber = referenceList.indexOf(orientation);
+        referenceNumber--;
+        if(referenceNumber < 0)
+            referenceNumber += 4;
+        orientation = referenceList.charAt(referenceNumber);
     }
 
     private String currentPosition() {
