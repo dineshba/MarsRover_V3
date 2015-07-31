@@ -20,4 +20,11 @@ public class RoverControllerTest {
 
         assertEquals("1 4 N", controller.doThis("MM"));
     }
+
+    @Test
+    public void MoveOnlyForAllInitialOrientation() {
+        RoverController controller = new RoverController("1 2 S");
+
+        assertEquals("1 0 S", controller.doThis("MM"));
+    }
 }

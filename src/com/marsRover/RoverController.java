@@ -34,8 +34,19 @@ public class RoverController {
     }
 
     private void move() {
-        if(orientation == 'N'){
-            yCoOrdinate++;
+        switch (orientation) {
+            case 'N':
+                yCoOrdinate++;
+                break;
+            case 'S':
+                yCoOrdinate--;
+                break;
+            case 'W':
+                xCoOrdinate--;
+                break;
+            case 'E':
+                xCoOrdinate++;
+                break;
         }
     }
 }
