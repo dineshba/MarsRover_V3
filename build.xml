@@ -21,6 +21,22 @@
                 <path refid="classpath"/>
             </classpath>
         </junit>
+
+        <junit haltonfailure="true" printsummary="true" showoutput="yes">
+            <test name="com.marsRover.RoverTest"/>
+            <classpath>
+                <pathelement location="out"/>
+                <path refid="classpath"/>
+            </classpath>
+        </junit>
+
+        <junit haltonfailure="true" printsummary="true" showoutput="yes">
+            <test name="com.marsRover.RoverControllerTest"/>
+            <classpath>
+                <pathelement location="out"/>
+                <path refid="classpath"/>
+            </classpath>
+        </junit>
     </target>
 
     <target name="createjar" depends="runjunit">

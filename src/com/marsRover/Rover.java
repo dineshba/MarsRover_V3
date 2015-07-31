@@ -16,4 +16,10 @@ public class Rover {
         view.show("Enter the commands");
         commands = view.getInput();
     }
+
+    public void executeCommands() {
+        for(int i =0; i < commands.length(); i++) {
+            char command = commands.charAt(i);
+        }
+    }
 }
