@@ -9,6 +9,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class ViewTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     PrintStream original;
@@ -22,7 +23,6 @@ public class ViewTest {
     @After
     public void cleanUpStream() {
         System.setOut(original);
-
     }
 
     @Test
@@ -33,5 +33,4 @@ public class ViewTest {
 
         assertEquals("Enter the Number of the Rovers\n", outContent.toString());
     }
-
 }
